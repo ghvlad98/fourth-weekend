@@ -1,0 +1,15 @@
+.container {
+    background-color: rgb(204, 204, 204);
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 50%;
+}
+
+h1 {
+    color: blue;
+    font-size: 50px;
+}

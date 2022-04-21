@@ -1,0 +1,11 @@
+input {
+    width: 30%;
+    font-size: 40px;
+    border: solid 2px blue;
+    border-radius: 5px;
+}
+
+button {
+    font-size: 40px;
+    width: 5%;
+}

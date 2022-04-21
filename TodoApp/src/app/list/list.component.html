@@ -1,0 +1,7 @@
+<ul *ngIf="dataService.itemList">
+    <li *ngFor="let el of dataService.itemList">
+        <span class="id">{{el.id}}</span>
+        <label class="title">{{el.title}}</label>
+        <mat-icon class="clear" (click)="dataService.deleteItem(el.id)">delete</mat-icon>
+    </li>
+</ul>

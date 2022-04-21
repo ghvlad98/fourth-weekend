@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>ex1</title>
+        <script type="text/javascript" language="javascript">
+            function validateCAP() {
+                let cap = document.form.cap.value;
+                if (isNaN(cap)) {
+                    alert( "CAP should be a number!" );
+                    document.form.cap.value = "";
+                } else {
+                    if (cap.length != 5) {
+                        alert( "CAP should have 5 numbers!" )
+                        document.form.cap.value = "";
+                    }
+                }
+            }
+
+            function validateCogNome() {
+                let cogNome = document.form.cogNome.value;
+                if (!(isNaN(cogNome))) {
+                    alert( "Surname and name should be made only by letters!" );
+                    document.form.cogNome.value = "";
+                }
+            }
+
+            function validateSubmit() {
+                let cogNome = document.form.cogNome.value;
+                if (cogNome == "") {
+                    alert( "Please provide your name and surname!" );
+                    document.form.cogNome.focus();
+                    return false;
+                }
+
+                let gender = document.form.sesso.value;
+                if (gender == "") {
+                    alert( "Please select your gender!" );
+                    return false;
+                }
+
+                let univ = document.form.univRO.value;
+                if (univ == "") {
+                    alert( "Please select your university!" );
+                    return false;
+                }
+
+                let lav = document.form.lav.value;
+                let desc = document.form.desc.value;
+                if (lav.checked && desc == "") {
+                    alert( "Please provide a description of your job!" );
+                    return false;
+                }
+            }
+        </script>
+    </head>
+
+    <body>
+        <form name="form" action="" method="get" onsubmit="validateSubmit()">
+            <div>
+                <label for="cg">Cognome e nome: </label><input type="text" id="cg" name="cogNome" maxlength="50" onchange="validateCogNome()">
+            </div>
+            <div>
+                Sesso:
+                <input type="radio" id="m" name="sesso" value="M"><label for="m">M</label>
+                <input type="radio" id="f" name="sesso" value="F"><label for="f">F</label>
+            </div>
+            <div>
+                <label for="uni">Ateneo: </label>
+                <select name="univRO" id="uni">
+                    <option value="" selected></option>
+                    <option value="Sapienza">Sapienza</option>
+                    <option value="TorVergata">Tor Vergata</option>
+                    <option value="RomaTre">Roma Tre</option>
+                </select>
+            </div>
+            <div>
+                <label for="cap">CAP: </label><input type="text" id="cap" name="cap" maxlength="5" onchange="validateCAP()">
+            </div>
+            <div>
+                <label for="lav">Studente lavoratore: </label><input type="checkbox" id="lav" name="lav">
+            </div>
+            <div>
+                <label for="desc">Descrizione lavoro: </label><input type="text" id="desc" name="desc" maxlength="80">
+            </div>
+            <div>
+                <input type="submit" value="Submit">
+                <input type="reset" value="Reset">
+            </div>
+        </form>
+    </body>
+</html>
